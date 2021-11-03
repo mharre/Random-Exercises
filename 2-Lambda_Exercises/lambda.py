@@ -1,3 +1,5 @@
+from functools import reduce
+
 r = lambda x: x + 15
 # print(r(10))
 r = lambda x,y: x * y
@@ -34,3 +36,24 @@ def square(l):
 starts_with = lambda x: True if x.startswith('P') else False
 # print(starts_with('Python'))
 
+fib_series = lambda n: reduce(lambda x, _: x+[x[-1]+x[-2]],
+                                range(n-2), [0, 1])
+                                
+# print(fib_series(30))
+
+def binary_search(item_list,item):
+	first = 0
+	last = len(item_list)-1
+	found = False
+	while( first<=last and not found):
+		mid = (first + last)//2
+		if item_list[mid] == item:
+			found = True
+		else:
+			if item < item_list[mid]:
+				last = mid - 1
+			else:
+				first = mid + 1	
+	return found
+
+print(binary_search([1,2,3,5,8], 6))
