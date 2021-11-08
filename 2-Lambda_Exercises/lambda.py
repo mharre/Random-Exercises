@@ -1,4 +1,5 @@
 from functools import reduce
+from collections import Counter
 
 r = lambda x: x + 15
 # print(r(10))
@@ -67,3 +68,62 @@ odd_ctr = len(list(filter(lambda x: (x%2 != 0) , array_nums)))
 even_ctr = len(list(filter(lambda x: (x%2 == 0) , array_nums)))
 # print("\nNumber of even numbers in the above array: ", even_ctr)
 # print("\nNumber of odd numbers in the above array: ", odd_ctr)
+
+weekdays = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
+days = filter(lambda day: day if len(day)==6 else '', weekdays)
+for d in days:
+  print(d)
+
+nums1 = [1, 2, 3]
+nums2 = [4, 5, 6]
+# print("Original list:")
+# print(nums1)
+# print(nums2)
+result = map(lambda x, y: x + y, nums1, nums2)
+# print("\nResult: after adding two list")
+# print(list(result))
+
+students = []
+sec_name = []
+second_low = 0
+n = int(input("Input number of students: "))
+for _ in range(n):
+   s_name = input("Name: ")
+   score = float(input("Grade: "))
+   students.append([s_name,score])
+# print("\nNames and Grades of all students:")
+# print(students)
+order = sorted(students, key = lambda x: int(x[1]))
+for i in range(n):
+   if order[i][1] != order[0][1]:
+       second_low = order[i][1]
+       break
+# print("\nSecond lowest grade: ",second_low)
+sec_student_name = [x[0] for x in order if x[1] == second_low]
+sec_student_name.sort()
+# print("\nNames:")
+for s_name in sec_student_name:
+   print(s_name)
+
+nums = [19, 65, 57, 39, 152, 639, 121, 44, 90, 190]
+# print("Orginal list:")
+# print(nums) 
+result = list(filter(lambda x: (x % 19 == 0 or x % 13 == 0), nums)) 
+# print("\nNumbers of the above list divisible by nineteen or thirteen:")
+# print(result)
+
+
+texts = ["php", "w3r", "Python", "abcd", "Java", "aaa"]
+# print("Orginal list of strings:")
+# print(texts) 
+result = list(filter(lambda x: (x == "".join(reversed(x))), texts)) 
+# print("\nList of palindromes:")
+# print(result) 
+
+texts = ["bcda", "abce", "cbda", "cbea", "adcb"]
+# str = "abcd"
+# print("Orginal list of strings:")
+# print(texts) 
+result = list(filter(lambda x: (Counter(str) == Counter(x)), texts)) 
+# print("\nAnagrams of 'abcd' in the above string: ")
+# print(result)
