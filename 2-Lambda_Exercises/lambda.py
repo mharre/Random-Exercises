@@ -41,3 +41,29 @@ fib_series = lambda n: reduce(lambda x, _: x+[x[-1]+x[-2]],
                                 
 # print(fib_series(30))
 
+is_num = lambda q: q.replace('.','',1).isdigit()
+# print(is_num('26587'))
+# print(is_num('4.2365'))
+# print(is_num('-12547'))
+# print(is_num('00'))
+# print(is_num('A001'))
+# print(is_num('001'))
+# print("\nPrint checking numbers:")
+is_num1 = lambda r: is_num(r[1:]) if r[0]=='-' else is_num(r)
+# print(is_num1('-16.4'))
+# print(is_num1('-24587.11'))
+
+array_nums = [-1, 2, -3, 5, 7, 8, 9, -10]
+# print("Original arrays:")
+# print(array_nums)
+result = sorted(array_nums, key = lambda i: 0 if i == 0 else -1 / i)
+# print("\nRearrange positive and negative numbers of the said array:")
+# print(result)
+
+array_nums = [1, 2, 3, 5, 7, 8, 9, 10]
+# print("Original arrays:")
+# print(array_nums)
+odd_ctr = len(list(filter(lambda x: (x%2 != 0) , array_nums)))
+even_ctr = len(list(filter(lambda x: (x%2 == 0) , array_nums)))
+# print("\nNumber of even numbers in the above array: ", even_ctr)
+# print("\nNumber of odd numbers in the above array: ", odd_ctr)
