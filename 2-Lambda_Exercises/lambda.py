@@ -127,3 +127,52 @@ texts = ["bcda", "abce", "cbda", "cbea", "adcb"]
 result = list(filter(lambda x: (Counter(str) == Counter(x)), texts)) 
 # print("\nAnagrams of 'abcd' in the above string: ")
 # print(result)
+
+sample_names = ['sally', 'Dylan', 'rebecca', 'Diana', 'Joanne', 'keith']
+sample_names=list(filter(lambda el:el[0].isupper() and el[1:].islower(),sample_names))
+# print("Result:")
+# print(len(''.join(sample_names)))
+
+nums = [2, 4, -6, -9, 11, -12, 14, -5, 17]
+# print("Original list:",nums)
+
+total_negative_nums = list(filter(lambda nums:nums<0,nums))
+total_positive_nums = list(filter(lambda nums:nums>0,nums))
+
+# print("Sum of the positive numbers: ",sum(total_negative_nums))
+# print("Sum of the negative numbers: ",sum(total_positive_nums))
+
+def divisible_by_digits(start_num, end_num):
+    return [n for n in range(start_num, end_num+1) \
+                if not any(map(lambda x: int(x) == 0 or n%int(x) != 0, str(n)))]
+# print(divisible_by_digits(1,22))
+
+def rearrange_bigger(n):
+    #Break the number into digits and store in a list
+    nums = list(str(n))
+    for i in range(len(nums)-2,-1,-1):
+        if nums[i] < nums[i+1]:
+            z = nums[i:]
+            y = min(filter(lambda x: x > z[0], z))
+            z.remove(y)
+            z.sort()
+            nums[i:] = [y] + z
+            return int("".join(nums))
+    return False
+n = 12
+# print("Original number:",n)
+# print("Next bigger number:",rearrange_bigger(n))
+
+n = 10
+# print("\nOriginal number:",n)
+# print("Next bigger number:",rearrange_bigger(n))
+      
+n = 201
+# print("\nOriginal number:",n)
+# print("Next bigger number:",rearrange_bigger(n))
+n = 102
+# print("\nOriginal number:",n)
+# print("Next bigger number:",rearrange_bigger(n))
+n = 445
+# print("\nOriginal number:",n)
+# print("Next bigger number:",rearrange_bigger(n))
