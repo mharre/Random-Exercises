@@ -176,3 +176,65 @@ n = 102
 n = 445
 # print("\nOriginal number:",n)
 # print("Next bigger number:",rearrange_bigger(n))
+
+def max_length_list(input_list):
+    max_length = max(len(x) for x in input_list )   
+    max_list = max(input_list, key = lambda i: len(i))    
+    return(max_length, max_list)
+    
+def min_length_list(input_list):
+    min_length = min(len(x) for x in input_list )  
+    min_list = min(input_list, key = lambda i: len(i))
+    return(min_length, min_list)
+      
+list1 = [[0], [1, 3], [5, 7], [9, 11], [13, 15, 17]]
+# print("Original list:")
+# print(list1)
+# print("\nList with maximum length of lists:")
+# print(max_length_list(list1))
+# print("\nList with minimum length of lists:")
+# print(min_length_list(list1))
+
+def sort_sublists(input_list):
+    result = [sorted(x, key = lambda x:x[0]) for x in input_list] 
+    return result
+color1 = [["green", "orange"], ["black", "white"], ["white", "black", "orange"]]
+# print("\nOriginal list:")
+# print(color1)  
+# print("\nAfter sorting each sublist of the said list of lists:")
+# print(sort_sublists(color1))
+
+def sort_sublists(input_list):
+    result = sorted(input_list, key=lambda l: (len(l), l))
+    return result
+list1 = [[2], [0], [1, 3], [0, 7], [9, 11], [13, 15, 17]]
+# print("Original list:")
+# print(list1)
+# print("\nSort the list of lists by length and value:")
+# print(sort_sublists(list1))
+
+def max_val(list_val):
+     max_val = max(list_val, key = lambda i: (isinstance(i, int), i))  
+     return(max_val)
+
+list_val = ['Python', 3, 2, 4, 5, 'version'] 
+# print("Original list:")
+# print(list_val)
+# print("\nMaximum values in the said list using lambda:")
+# print(max_val(list_val))
+
+def sort_matrix(M):
+    result = sorted(M, key=lambda matrix_row: sum(matrix_row)) 
+    return result
+
+matrix1 = [[1, 2, 3], [2, 4, 5], [1, 1, 1]]
+matrix2 = [[1, 2, 3], [-2, 4, -5], [1, -1, 1]]
+
+# print("Original Matrix:")
+# print(matrix1)
+# print("\nSort the said matrix in ascending order according to the sum of its rows") 
+# print(sort_matrix(matrix1))
+# print("\nOriginal Matrix:")
+# print(matrix2) 
+# print("\nSort the said matrix in ascending order according to the sum of its rows") 
+# print(sort_matrix(matrix2))
