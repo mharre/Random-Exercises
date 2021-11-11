@@ -238,3 +238,64 @@ matrix2 = [[1, 2, 3], [-2, 4, -5], [1, -1, 1]]
 # print(matrix2) 
 # print("\nSort the said matrix in ascending order according to the sum of its rows") 
 # print(sort_matrix(matrix2))
+
+def extract_string(str_list1, l):
+    result = list(filter(lambda e: len(e) == l, str_list1))
+    return result
+
+str_list1 = ['Python', 'list', 'exercises', 'practice', 'solution'] 
+# print("Original list:")
+# print(str_list1)
+l = 8
+# print("\nlength of the string to extract:")
+# print(l)
+# print("\nAfter extracting strings of specified length from the said list:")
+# print(extract_string(str_list1 , l))
+
+def count_integer(list1):
+    ert = list(map(lambda i: isinstance(i, float), list1)) 
+    result = len([e for e in ert if e])         
+    return result
+list1 = [1, 'abcd', 3.12, 1.2, 4, 'xyz', 5, 'pqr', 7, -5, -12.22]
+# print("Original list:")
+# print(list1)
+# print("\nNumber of floats in the said mixed list:")
+# print(count_integer(list1))
+
+def check_string(str1):
+    messg = [
+    lambda str1: any(x.isupper() for x in str1) or 'String must have 1 upper case character.',
+    lambda str1: any(x.islower() for x in str1) or 'String must have 1 lower case character.',
+    lambda str1: any(x.isdigit() for x in str1) or 'String must have 1 number.',
+    lambda str1: len(str1) >= 7                 or 'String length should be atleast 8.',]
+    result = [x for x in [i(str1) for i in messg] if x != True]
+    if not result:
+        result.append('Valid string.')
+    return result    
+s = input("Input the string: ")
+# print(check_string(s))
+
+def filter_data(students):
+    result = dict(filter(lambda x: (x[1][0], x[1][1]) > (6.0, 70), students.items()))
+    return result  
+students = {'Cierra Vega': (6.2, 70), 'Alden Cantrell': (5.9, 65), 'Kierra Gentry': (6.0, 68), 'Pierre Cox': (5.8, 66)}
+# print("Original Dictionary:")
+# print(students)
+# print("\nHeight> 6ft and Weight> 70kg:")
+# print(filter_data(students))
+
+def is_sort_list(nums, key=lambda x: x):
+    for i, e in enumerate(nums[1:]):
+        if key(e) < key(nums[i]): 
+            return False
+    return True
+nums1 = [1,2,4,6,8,10,12,14,16,17]
+# print ("Original list:")
+# print(nums1)
+# print("\nIs the said list is sorted!")
+# print(is_sort_list(nums1)) 
+nums2 = [2,3,8,4,7,9,8,2,6,5,1,6,1,2,3,4,6,9,1,2]
+# print ("\nOriginal list:")
+# print(nums1)
+# print("\nIs the said list is sorted!")
+# print(is_sort_list(nums2))
