@@ -54,4 +54,15 @@ def count_partitions(n, m):
         else:
             return count_partitions(n-m, m) + count_partitions(n, m-1)
 
-print(count_partitions(15,15))
+# print(count_partitions(15,15))
+
+def count_up(n):
+    """ prints numbers from 1 to n """
+    if n == 1:
+        print(n)
+    else:
+        count_up(n-1)
+        print(n)
+    
+# count_up(5)
+
