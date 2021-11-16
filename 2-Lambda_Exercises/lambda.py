@@ -299,3 +299,69 @@ nums2 = [2,3,8,4,7,9,8,2,6,5,1,6,1,2,3,4,6,9,1,2]
 # print(nums1)
 # print("\nIs the said list is sorted!")
 # print(is_sort_list(nums2))
+
+def index_on_inner_list(list_data, index_no):
+    result = sorted(list_data, key=lambda x: x[index_no])
+    return result
+students = [('Greyson Fulton', 98, 99), ('Brady Kent', 97, 96), ('Wyatt Knott', 91, 94), ('Beau Turnbull', 94, 98)] 
+# print ("Original list:")
+# print(students)
+# index_no = 0
+# print("\nSort the said list of lists by a given index","( Index = ",index_no,") of the inner list")
+# print(index_on_inner_list(students, index_no))
+# index_no = 2
+# print("\nSort the said list of lists by a given index","( Index = ",index_no,") of the inner list")
+# print(index_on_inner_list(students, index_no))
+
+def index_on_inner_list(list1, list2):
+    result = list(filter(lambda x: x not in list2, list1))
+    return result
+list1 = [1,2,3,4,5,6,7,8,9,10]
+list2 = [2,4,6,8]
+# print("Original lists:")
+# print("list1:", list1)
+# print("list2:", list2)
+# print("\nRemove all elements from 'list1' present in 'list2:")
+# print(index_on_inner_list(list1, list2))
+
+def find_substring(str1, sub_str):
+    result = list(filter(lambda x: sub_str in x, str1))
+    return result
+colors = ["red", "black", "white", "green", "orange"]
+# print("Original list:")
+# print(colors)
+
+# sub_str = "ack"
+# print("\nSubstring to search:")
+# print(sub_str)
+# print("Elements of the said list that contain specific substring:")
+# print(find_substring(colors, sub_str))
+# sub_str = "abc"
+# print("\nSubstring to search:")
+# print(sub_str)
+# print("Elements of the said list that contain specific substring:")
+# print(find_substring(colors, sub_str))
+
+def intersection_nested_lists(l1, l2):
+    result = [list(filter(lambda x: x in l1, sublist)) for sublist in l2]
+    return result
+nums1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14]
+nums2 = [[12, 18, 23, 25, 45], [7, 11, 19, 24, 28], [1, 5, 8, 18, 15, 16]]
+# print("\nOriginal lists:")
+# print(nums1)
+# print(nums2)
+# print("\nIntersection of said nested lists:")
+# print(intersection_nested_lists(nums1, nums2))
+
+def extract_nth_element(test_list, n):
+    result = list(map (lambda x:(x[n]), test_list))
+    return result
+students = [('Greyson Fulton', 98, 99), ('Brady Kent', 97, 96), ('Wyatt Knott', 91, 94), ('Beau Turnbull', 94, 98)] 
+# print ("Original list:")
+# print(students)
+# n = 0
+# print("\nExtract nth element ( n =",n,") from the said list of tuples:")
+# print(extract_nth_element(students, n))
+# n = 2
+# print("\nExtract nth element ( n =",n,") from the said list of tuples:")
+# print(extract_nth_element(students, n))
