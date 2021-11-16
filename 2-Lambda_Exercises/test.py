@@ -66,3 +66,12 @@ def count_up(n):
     
 # count_up(5)
 
+def cascade(n):
+    if n < 10:
+        print(n)
+    else:
+        print(n)
+        print(cascade( n // 10))
+        print(n)
+
+cascade(484)

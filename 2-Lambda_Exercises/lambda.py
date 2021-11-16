@@ -1,5 +1,6 @@
 from functools import reduce
 from collections import Counter
+import functools
 
 r = lambda x: x + 15
 # print(r(10))
@@ -365,3 +366,59 @@ students = [('Greyson Fulton', 98, 99), ('Brady Kent', 97, 96), ('Wyatt Knott', 
 # n = 2
 # print("\nExtract nth element ( n =",n,") from the said list of tuples:")
 # print(extract_nth_element(students, n))
+
+def reverse_strings_list(string_list):
+    result = list(map(lambda x: "".join(reversed(x)), string_list))
+    return result
+
+colors_list = ["Red", "Green", "Blue", "White", "Black"]
+# print("\nOriginal lists:")
+# print(colors_list)
+# print("\nReverse strings of the said given list:")
+# print(reverse_strings_list(colors_list))
+
+def remove_duplicates(nums):
+    result = functools.reduce(lambda x, y: x * y, nums, 1)
+    return result
+nums1 = [1,2,3,4,5,6,7,8,9,10]
+nums2 = [2.2,4.12,6.6,8.1,8.3]
+# print("list1:", nums1)
+# print("Product of the said list numbers:")
+# print(remove_duplicates(nums1))
+# print("\nlist2:", nums2)
+# print("Product of the said list numbers:")
+# print(remove_duplicates(nums2))
+
+def mutiple_list(nums):
+    result =  reduce(lambda x, y: x*y, nums)
+    return result
+nums = [4, 3, 2, 2, -1, 18]
+# print ("Original list: ")
+# print(nums)
+# print("Mmultiply all the numbers of the said list:",mutiple_list(nums))
+nums = [2, 4, 8, 8, 3, 2, 9]
+# print ("\nOriginal list: ")
+# print(nums)
+# print("Mmultiply all the numbers of the said list:",mutiple_list(nums))
+
+def average_tuple(nums):
+    result = tuple(map(lambda x: sum(x) / float(len(x)), zip(*nums)))
+    return result
+
+nums = ((10, 10, 10), (30, 45, 56), (81, 80, 39), (1, 2, 3))
+# print ("Original Tuple: ")
+# print(nums)
+# print("\nAverage value of the numbers of the said tuple of tuples:\n",average_tuple(nums))
+nums = ((1, 1, -5), (30, -15, 56), (81, -60, -39), (-10, 2, 3))
+# print ("\nOriginal Tuple: ")
+# print(nums)
+# print("\nAverage value of the numbers of the said tuple of tuples:\n",average_tuple(nums))
+
+def tuple_int_str(tuple_str):
+    result = tuple(map(lambda x: (int(x[0]), int(x[2])), tuple_str))
+    return result     
+tuple_str =  (('233', 'ABCD', '33'), ('1416', 'EFGH', '55'), ('2345', 'WERT', '34'))
+# print("Original tuple values:")
+# print(tuple_str)
+# print("\nNew tuple values:")
+# print(tuple_int_str(tuple_str))
