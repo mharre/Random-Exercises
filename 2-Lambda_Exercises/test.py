@@ -74,4 +74,35 @@ def cascade(n):
         print(cascade( n // 10))
         print(n)
 
-cascade(484)
+# cascade(484)
+
+def skip_add(n):
+    if n <= 0:
+        return 0
+    else:
+        return n + skip_add(n-2)
+
+# print(skip_add(5))
+
+
+def hailstone(n, steps=0):
+    print(n)
+    if n == 1:
+        return steps+1
+    elif n % 2 == 0:
+        return hailstone(n//2, steps+1)
+    else:
+        return hailstone(n*3+1, steps+1)
+    
+
+# print(hailstone(10))
+
+def summation(n, term):
+    if n <= 0:
+        return n
+    else:
+        return summation(n-1, term) + term(n)
+
+# print(summation(5, lambda x: x * x * x))
+# print(summation(9, lambda x: x + 1))
+# print(summation(5, lambda x: 2**x))
