@@ -1,3 +1,5 @@
+from math import sqrt
+
 def summation(n, term):
     total, k = 0, 1
     while k <= n:
@@ -106,3 +108,11 @@ def summation(n, term):
 # print(summation(5, lambda x: x * x * x))
 # print(summation(9, lambda x: x + 1))
 # print(summation(5, lambda x: 2**x))
+
+def gcd(a,b):
+    if a > b and a % b != 0:
+        return gcd(b, a%b)
+    else:
+        return gcd(a, a%b)
+
+print(gcd(34,19))

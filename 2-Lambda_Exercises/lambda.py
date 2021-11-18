@@ -422,3 +422,44 @@ tuple_str =  (('233', 'ABCD', '33'), ('1416', 'EFGH', '55'), ('2345', 'WERT', '3
 # print(tuple_str)
 # print("\nNew tuple values:")
 # print(tuple_int_str(tuple_str))
+
+def position_max_min(nums):
+    max_result = max(enumerate(nums), key=(lambda x: x[1]))
+    min_result = min(enumerate(nums), key=(lambda x: x[1]))
+    return max_result,min_result
+
+nums = [12,33,23,10.11,67,89,45,66.7,23,12,11,10.25,54]
+# print("Original list:")
+# print(nums)
+result = position_max_min(nums)
+# print("\nIndex position and value of the maximum value of the said list:")
+# print(result[0])
+# print("\nIndex position and value of the minimum value of the said list:")
+# print(result[1])
+
+def sort_mixed_list(mixed_list):
+    mixed_list.sort(key=lambda e: (isinstance(e, str), e))
+    return mixed_list
+mixed_list = [19,'red',12,'green','blue', 10,'white','green',1]
+# print("Original list:")
+# print(mixed_list)
+# print("\nSort the said  mixed list of integers and strings:")
+# print(sort_mixed_list(mixed_list))
+
+def sort_numeric_strings(nums_str):
+    result = sorted(nums_str, key=lambda el: int(el))
+    return result
+nums_str = ['4','12','45','7','0','100','200','-12','-500']
+# print("Original list:")
+# print(nums_str)
+# print("\nSort the said list of strings(numbers) numerically:")
+# print(sort_numeric_strings(nums_str))
+
+def count_occurrences(nums):
+    result = dict(map(lambda el  : (el, list(nums).count(el)), nums))
+    return result
+nums = [3,4,5,8,0,3,8,5,0,3,1,5,2,3,4,2]
+# print("Original list:")
+# print(nums)
+# print("\nCount the occurrences of the items in the said list:")
+# print(count_occurrences(nums))
