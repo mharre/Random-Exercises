@@ -463,3 +463,37 @@ nums = [3,4,5,8,0,3,8,5,0,3,1,5,2,3,4,2]
 # print(nums)
 # print("\nCount the occurrences of the items in the said list:")
 # print(count_occurrences(nums))
+
+def remove_words(list1, remove_words):
+    result = list(filter(lambda word: word not in remove_words, list1))
+    return result
+        
+colors = ['orange', 'red', 'green', 'blue', 'white', 'black']
+remove_colors = ['orange','black']
+# print("Original list:")
+# print(colors)
+# print("\nRemove words:")
+# print(remove_colors)
+# print("\nAfter removing the specified words from the said list:")
+# print(remove_words(colors, remove_colors))
+
+def max_min_list_tuples(class_students):
+    return_max = max(class_students,key=lambda item:item[1])[1]
+    return_min = min(class_students,key=lambda item:item[1])[1]
+    return return_max, return_min
+    
+class_students = [('V', 62), ('VI', 68), ('VII', 72), ('VIII', 70), ('IX', 74), ('X', 65)]
+# print("Original list with tuples:")
+# print(class_students)
+# print("\nMaximum and minimum values of the said list of tuples:")
+# print(max_min_list_tuples(class_students))
+
+def remove_none(nums):
+    result = filter(lambda v: v is not None, nums)
+    return list(result)
+
+nums = [12, 0, None, 23, None, -55, 234, 89, None, 0, 6, -12]
+# print("Original list:")
+# print(nums)
+# print("\nRemove None value from the said list:")
+# print(remove_none(nums))

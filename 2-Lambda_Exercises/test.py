@@ -115,4 +115,11 @@ def gcd(a,b):
     else:
         return gcd(a, a%b)
 
-print(gcd(34,19))
+# print(gcd(34,19))
+
+def enum(s, start=0):
+    return [[i,s] for i,s in enumerate(s)]
+
+
+
+print(enum([6,1,'a']))
