@@ -120,6 +120,45 @@ def gcd(a,b):
 def enum(s, start=0):
     return [[i,s] for i,s in enumerate(s)]
 
+# print(enum([6,1,'a']))
 
+nums = (1, 2, 3, 4, 5, 6, 7) 
+print("Original list: ", nums)
+result = map(lambda x: x + x + x, nums) 
+print("\nTriple of said list numbers:")
+print(list(result))
 
-print(enum([6,1,'a']))
+nums1 = [1, 2, 3] 
+nums2 = [4, 5, 6] 
+nums3 = [7, 8, 9] 
+print("Original list: ")
+print(nums1)  
+print(nums2)  
+print(nums3)  
+result = map(lambda x, y, z: x + y + z, nums1, nums2, nums3) 
+print("\nNew list after adding above three lists:")
+print(list(result))
+
+color = ['Red', 'Blue', 'Black', 'White', 'Pink'] 
+print("Original list: ")
+print(color) 
+print("\nAfter listify the list of strings are:") 
+result = list(map(list, color)) 
+print(result)
+
+bases_num = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
+index = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+print("Base numbers abd index: ")
+print(bases_num)
+print(index)
+result = list(map(pow, bases_num, index))
+print("\nPower of said number in bases raised to the corresponding number in the index:")
+print(result)
+
+def square_num(n):
+  return n * n
+nums = [4, 5, 2, 9]
+print("Original List: ",nums)
+result = map(square_num, nums)
+print("Square the elements of the said list using map():")
+print(list(result))
