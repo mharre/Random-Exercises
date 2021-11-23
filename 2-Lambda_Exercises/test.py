@@ -1,4 +1,5 @@
 from math import sqrt
+import itertools
 
 def summation(n, term):
     total, k = 0, 1
@@ -123,42 +124,103 @@ def enum(s, start=0):
 # print(enum([6,1,'a']))
 
 nums = (1, 2, 3, 4, 5, 6, 7) 
-print("Original list: ", nums)
+# print("Original list: ", nums)
 result = map(lambda x: x + x + x, nums) 
-print("\nTriple of said list numbers:")
-print(list(result))
+# print("\nTriple of said list numbers:")
+# print(list(result))
 
 nums1 = [1, 2, 3] 
 nums2 = [4, 5, 6] 
 nums3 = [7, 8, 9] 
-print("Original list: ")
-print(nums1)  
-print(nums2)  
-print(nums3)  
+# print("Original list: ")
+# print(nums1)  
+# print(nums2)  
+# print(nums3)  
 result = map(lambda x, y, z: x + y + z, nums1, nums2, nums3) 
-print("\nNew list after adding above three lists:")
-print(list(result))
+# print("\nNew list after adding above three lists:")
+# print(list(result))
 
 color = ['Red', 'Blue', 'Black', 'White', 'Pink'] 
-print("Original list: ")
-print(color) 
-print("\nAfter listify the list of strings are:") 
+# print("Original list: ")
+# print(color) 
+# print("\nAfter listify the list of strings are:") 
 result = list(map(list, color)) 
-print(result)
+# print(result)
 
 bases_num = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
 index = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-print("Base numbers abd index: ")
-print(bases_num)
-print(index)
+# print("Base numbers abd index: ")
+# print(bases_num)
+# print(index)
 result = list(map(pow, bases_num, index))
-print("\nPower of said number in bases raised to the corresponding number in the index:")
-print(result)
+# print("\nPower of said number in bases raised to the corresponding number in the index:")
+# print(result)
 
 def square_num(n):
   return n * n
 nums = [4, 5, 2, 9]
-print("Original List: ",nums)
+# print("Original List: ",nums)
 result = map(square_num, nums)
-print("Square the elements of the said list using map():")
-print(list(result))
+# print("Square the elements of the said list using map():")
+# print(list(result))
+
+
+def change_cases(s):
+  return str(s).upper(), str(s).lower()
+ 
+chrars = {'a', 'b', 'E', 'f', 'a', 'i', 'o', 'U', 'a'}
+# print("Original Characters:\n",chrars)
+ 
+result = map(change_cases, chrars)
+# print("\nAfter converting above characters in upper and lower cases\nand eliminating duplicate letters:")
+# print(set(result))
+
+def addition_subtrction(x, y):
+    return x + y, x - y
+ 
+nums1 = [6, 5, 3, 9]
+nums2 = [0, 1, 7, 7]
+# print("Original lists:")
+# print(nums1)
+# print(nums2)
+result = map(addition_subtrction, nums1, nums2)
+# print("\nResult:")
+# print(list(result))
+
+nums_list = [1,2,3,4]
+nums_tuple = (0, 1, 2, 3) 
+# print("Original list and tuple:")
+# print(nums_list)
+# print(nums_tuple)
+result_list = list(map(str,nums_list))
+result_tuple = tuple(map(str,nums_tuple))
+# print("\nList of strings:")
+# print(result_list)
+# print("\nTuple of strings:")
+# print(result_tuple)
+
+student_data  = [('Alberto Franco','15/05/2002','35kg'), ('Gino Mcneill','17/05/2002','37kg'), ('Ryan Parkes','16/02/1999', '39kg'), ('Eesha Hinton','25/09/1998', '35kg')]
+# print("Original data:")
+# print(student_data)
+students_data_name = list(map(lambda x:x[0], student_data))
+students_data_dob = list(map(lambda x:x[1], student_data))
+students_data_weight = list(map(lambda x:int(x[2][:-2]), student_data))
+# print("\nStudent name:")
+print(students_data_name)
+# print("Student name:")
+print(students_data_dob)
+# print("Student weight:")
+print(students_data_weight)
+
+n = 10
+def fibonacci_nums(x=0, y=1):
+    yield x
+    while True:
+        yield y
+        x, y = y, x + y
+# print("First 10 Fibonacci numbers:")
+result = list(itertools.islice(fibonacci_nums(), n))
+# print(result)
+square = lambda x: x * x 
+# print("\nAfter squaring said numbers of the list:")
+# print(list(map(square, result)))
